@@ -2,7 +2,7 @@ Innlevering med tilbakemelding: React og Express på Heroku
 =================================
 
 ### Applikasjonen skal vise at dere beherkser: 
-* [ ] Parcel
+* [X] Parcel
 * [ ] React 
 * [ ] React Router 
 * [ ] Jest 
@@ -13,7 +13,7 @@ Innlevering med tilbakemelding: React og Express på Heroku
 
 
 ### Oppsummert: 
-* [ ] Få en Parcel til å bygge en React applikasjon 
+* [X] Få en Parcel til å bygge en React applikasjon 
 * [ ] Få en React Router til å navigere rundt i applikasjonen 
 * [ ] Få React til å hente og lagre infomrasjon til et API 
 * [ ] Få Github Actions til å kjøre Jest-testene og publisere coverage til Coveralls

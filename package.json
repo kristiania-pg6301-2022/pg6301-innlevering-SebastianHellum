@@ -11,7 +11,11 @@
     "prepare": "husky install",
     "pre-commit": "npm run prettier:check",
     "prettier:check": "prettier --check **/*.{js,jsx}",
-    "prettier:write": "prettier --write **/*.{js,jsx}"
+    "prettier:write": "prettier --write **/*.{js,jsx}",
+    "build": "npm run build:server && npm run build:client",
+    "build:server": "cd server && npm run build",
+    "build:client": "cd client && npm run build",
+    "start": "cd server && npm start"
   },
   "repository": {
     "type": "git",

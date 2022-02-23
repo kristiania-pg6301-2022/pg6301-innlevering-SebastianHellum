@@ -4,6 +4,9 @@
   "description": "Innlevering med tilbakemelding",
   "main": "index.js",
   "scripts": {
+    "dev": "concurrently npm:dev:client npm:dev:server",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

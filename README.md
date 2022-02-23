@@ -9,7 +9,7 @@ Innlevering med tilbakemelding: React og Express på Heroku
 * [ ] GitHub Actions 
 * [ ] Coveralls 
 * [ ] Express 
-* [ ] Heroku 
+* [X] Heroku 
 
 
 ### Oppsummert: 
@@ -17,7 +17,7 @@ Innlevering med tilbakemelding: React og Express på Heroku
 * [ ] Få en React Router til å navigere rundt i applikasjonen 
 * [ ] Få React til å hente og lagre infomrasjon til et API 
 * [ ] Få Github Actions til å kjøre Jest-testene og publisere coverage til Coveralls
-* [ ] Få Heroku til å publisere websidene
+* [X] Få Heroku til å publisere websidene
 
 ### Express-serveren skal ha følgende API: 
 * [ ] GET /api/question - returnerer et tilfeldig spørsmål med { id, category, question, answers }

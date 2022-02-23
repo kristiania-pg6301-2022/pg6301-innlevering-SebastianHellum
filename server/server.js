@@ -5,7 +5,7 @@ const app = express();
 app.get("/api/questions", (req, res) => {
   res.json({
     questionNumber: 1,
-    questionText: "How do you build this thing",
+    questionText: "How do you build this?",
   });
 });
 

@@ -1,3 +1,7 @@
+[![Run test](https://github.com/kristiania-pg6301-2022/pg6301-innlevering-SebastianHellum/actions/workflows/test.yml/badge.svg)](https://github.com/kristiania-pg6301-2022/pg6301-innlevering-SebastianHellum/actions/workflows/test.yml)
+
+[![Coverage Status](https://coveralls.io/repos/github/kristiania-pg6301-2022/pg6301-innlevering-SebastianHellum/badge.svg?branch=main)](https://coveralls.io/github/kristiania-pg6301-2022/pg6301-innlevering-SebastianHellum?branch=main)
+
 Innlevering med tilbakemelding: React og Express på Heroku 
 =================================
 

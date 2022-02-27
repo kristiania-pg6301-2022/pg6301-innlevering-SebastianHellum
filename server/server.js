@@ -3,11 +3,13 @@ import * as path from "path";
 
 const app = express();
 
-app.get("/api/questions", (req, res) => {
-  res.json({
-    questionNumber: 1,
-    questionText: "How do you build this?",
-  });
+app.use(express.static("../client/dist"));
+app.use((req, res, next) => {
+  if (req.method === "GET" && !req.path.startsWith("/api/question/")) {
+    return res.sendFile(path.resolve("../client/quizGame.jsx"));
+  } else {
+    next();
+  }
 });
 
 app.use(express.static("../client/dist"));

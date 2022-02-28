@@ -34,6 +34,7 @@ export function ShowQuestion({ setCorrectAnswers, setQuestionsAnswered }) {
       navigate("/answer/wrong");
     }
   }
+
   const navigate = useNavigate();
   const [question] = useState(randomQuestion());
   return (

@@ -92,7 +92,7 @@ export function QuizGame() {
           element={
             <ShowQuestion
               setQuestionsAnswered={setQuestionsAnswered}
-              setCorrectAnwers={setCorrectAnswers}
+              setCorrectAnswers={setCorrectAnswers}
             />
           }
         />

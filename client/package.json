@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "parcel index.html",
     "build": "npm install --include=dev && parcel build index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "verify": "npm test -- --coverage"
   },
   "keywords": [],
   "author": "",
@@ -14,8 +15,27 @@
     "parcel": "^2.3.2"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-jest": "^27.4.6",
+    "jest": "^27.4.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.2.1"
+  },
+
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+
+  "jest": {
+    "collectCoverage": true,
+    "testEnvironment": "jsdom",
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}"
+    ]
   }
 }

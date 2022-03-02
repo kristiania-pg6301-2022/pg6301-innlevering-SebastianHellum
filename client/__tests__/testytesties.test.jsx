@@ -21,7 +21,26 @@ describe("Quiz game", () => {
 
     it("shows quizgame", () => {
         const element = document.createElement("div");
-        ReactDOM.render(<QuizGame />, element);
+        ReactDOM.render(<QuizGame/>, element);
         expect(element.innerHTML).toMatchSnapshot();
     });
+
+    it("shows question", () => {
+        const question = {
+            question: "Is this fun?",
+            answers: {
+                answer_a: "Yes",
+                answer_b: "No",
+                answer_c: "Maybe",
+            }
+        }
+        const element = document.createElement("div");
+        ReactDOM.render(
+            <MemoryRouter>
+                <ShowQuestion/>
+            </MemoryRouter>,
+            element
+        );
+        expect(element.innerHTML).toMatchSnapshot();
+    })
 });

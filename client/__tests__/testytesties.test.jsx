@@ -18,4 +18,10 @@ describe("Quiz game", () => {
         );
         expect(element.innerHTML).toMatchSnapshot();
     });
+
+    it("shows quizgame", () => {
+        const element = document.createElement("div");
+        ReactDOM.render(<QuizGame />, element);
+        expect(element.innerHTML).toMatchSnapshot();
+    });
 });

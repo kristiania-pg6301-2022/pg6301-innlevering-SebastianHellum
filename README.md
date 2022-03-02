@@ -9,9 +9,9 @@ Innlevering med tilbakemelding: React og Express på Heroku
 * [X] Parcel
 * [X] React 
 * [X] React Router 
-* [ ] Jest 
-* [ ] GitHub Actions 
-* [ ] Coveralls 
+* [X] Jest 
+* [X] GitHub Actions 
+* [X] Coveralls 
 * [ ] Express 
 * [X] Heroku 
 
@@ -20,7 +20,7 @@ Innlevering med tilbakemelding: React og Express på Heroku
 * [X] Få en Parcel til å bygge en React applikasjon 
 * [X] Få en React Router til å navigere rundt i applikasjonen 
 * [ ] Få React til å hente og lagre infomrasjon til et API 
-* [ ] Få Github Actions til å kjøre Jest-testene og publisere coverage til Coveralls
+* [X] Få Github Actions til å kjøre Jest-testene og publisere coverage til Coveralls
 * [X] Få Heroku til å publisere websidene
 
 ### Express-serveren skal ha følgende API: 

@@ -2,6 +2,7 @@
   "name": "pg6301-innlevering-sebastianhellum",
   "version": "1.0.0",
   "description": "Innlevering med tilbakemelding",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "concurrently npm:dev:client npm:dev:server",

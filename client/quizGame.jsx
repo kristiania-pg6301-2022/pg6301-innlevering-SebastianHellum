@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
 import {
   BrowserRouter,
   Link,
@@ -7,7 +6,7 @@ import {
   Routes,
   useNavigate,
 } from "react-router-dom";
-import { isCorrectAnswer, randomQuestion } from "../server/quiz.js";
+import { isCorrectAnswer, randomQuestion } from "./quiz.js";
 import "./app.css";
 
 export function FrontPage({ correctAnswers, questionsAnswered }) {

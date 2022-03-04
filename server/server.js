@@ -10,33 +10,34 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
-//GET - Returns random question with: id, category, question, answers
 app.get("/api/question", (req, res) => {
   const { id, category, question, answers } = randomQuestion();
-  res.json({ id, category, question, answers });
+  res.json({ id, question, answers, category });
 });
 
-//POST - Takes in:  id, answer, Returns: "true" || "false"
+// callback: (req, res) => {}
 app.post("/api/question", (req, res) => {
   const { id, answer } = req.body;
-  const question = Questions.find((q) => q.id === id);
-  if (!question) {
-    return res.sendStatus(404);
-  }
   const score = req.signedCookies.score
     ? JSON.parse(req.signedCookies.score)
     : {
         answered: 0,
         correct: 0,
       };
+  const question = Questions.find((q) => q.id === id);
+
+  if (!question) {
+    return res.sendStatus(404);
+  }
+
   score.answered += 1;
-  if (isCorrectAnswer({ question, answer })) {
+  if (isCorrectAnswer(question, answer)) {
     score.correct += 1;
     res.cookie("score", JSON.stringify(score), { signed: true });
-    return res.json({ result: "true" });
+    return res.json({ result: "correct" });
   } else {
     res.cookie("score", JSON.stringify(score), { signed: true });
-    return res.json({ result: "false" });
+    return res.json({ result: "incorrect" });
   }
 });
 
@@ -50,15 +51,26 @@ app.get("/api/score", (req, res) => {
   res.json(score);
 });
 
-app.use(express.static("../client/dist"));
+//middleware for dist file
+app.use(express.static(path.resolve("../client/dist")));
+
+//path
 app.use((req, res, next) => {
-  if (req.method === "GET" && !req.path.startsWith("/api/")) {
+  if (req.method === "GET" && !req.path.startsWith("/api")) {
     return res.sendFile(path.resolve("../client/dist/index.html"));
   } else {
     next();
   }
 });
 
+//assigning port
 const server = app.listen(process.env.PORT || 5000, () => {
-  console.log(`Server started on http://localhost:${server.address().port}`);
+  console.log(
+    `Server started on port http://localhost:${server.address().port}`
+  );
 });
+export default app;
+
+export const handler = function () {
+  server.close();
+};

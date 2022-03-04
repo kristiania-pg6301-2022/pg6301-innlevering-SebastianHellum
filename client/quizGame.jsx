@@ -1,17 +1,10 @@
 import React, { useState } from "react";
-import {
-  BrowserRouter,
-  Link,
-  Route,
-  Routes,
-  useNavigate,
-} from "react-router-dom";
-import { isCorrectAnswer, randomQuestion } from "./quiz.js";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import "./app.css";
 import { fetchJSON, postJSON } from "./http";
 import { useLoader } from "./useLoader";
 
-export function FrontPage({ correctAnswers, questionsAnswered }) {
+export function FrontPage() {
   return (
     <div className="main">
       <h1>Quiz app</h1>
@@ -59,6 +52,9 @@ export function ShowQuestion() {
             </button>
           </div>
         ))}
+      <Link to={"/score"}>
+        <button className="showButton">Show your score</button>
+      </Link>
     </div>
   );
 }
@@ -71,7 +67,7 @@ function ShowAnswer() {
         <Route path={"wrong"} element={<h1>Wrong!</h1>} />
       </Routes>
       <div>
-        <Link classname="links" to={"/score"}>
+        <Link className="links" to={"/score"}>
           Show your score
         </Link>
       </div>
@@ -95,7 +91,7 @@ export function ShowScore() {
   const { answered, correct } = data;
 
   return (
-    <div>
+    <div className="main">
       <h1>
         You have answered {correct} out of {answered} answers correctly
       </h1>

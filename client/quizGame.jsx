@@ -1,17 +1,10 @@
 import React, { useState } from "react";
-import {
-  BrowserRouter,
-  Link,
-  Route,
-  Routes,
-  useNavigate,
-} from "react-router-dom";
-import { isCorrectAnswer, randomQuestion } from "./quiz.js";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import "./app.css";
 import { fetchJSON, postJSON } from "./http";
 import { useLoader } from "./useLoader";
 
-export function FrontPage({ correctAnswers, questionsAnswered }) {
+export function FrontPage() {
   return (
     <div className="main">
       <h1>Quiz app</h1>

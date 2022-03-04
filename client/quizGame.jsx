@@ -53,7 +53,7 @@ export function ShowQuestion() {
           </div>
         ))}
       <Link to={"/score"}>
-        <button className="answerButton">Show your score</button>
+        <button className="showButton">Show your score</button>
       </Link>
     </div>
   );
@@ -91,7 +91,7 @@ export function ShowScore() {
   const { answered, correct } = data;
 
   return (
-    <div>
+    <div className="main">
       <h1>
         You have answered {correct} out of {answered} answers correctly
       </h1>

@@ -1,0 +1,12 @@
+/.idea/
+node_modules/
+/.parcel-cache/
+/client/.parcel-cache/
+/client/__tests__/__snapshots__/
+/server/__tests__/__snapshots__/
+/dist/
+/client/dist/
+/coverage/
+/client/coverage/
+/server/coverage/
+/.env

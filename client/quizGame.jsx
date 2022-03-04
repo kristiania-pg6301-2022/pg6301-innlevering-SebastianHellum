@@ -15,9 +15,6 @@ export function FrontPage({ correctAnswers, questionsAnswered }) {
   return (
     <div className="main">
       <h1>Quiz app</h1>
-      <div data-testid={"status"}>
-        You have answered {correctAnswers} of {questionsAnswered} correctly
-      </div>
       <div>
         <Link to={"/question"}>
           <button className="answerButton">Take a new quiz</button>
@@ -32,19 +29,24 @@ export function FrontPage({ correctAnswers, questionsAnswered }) {
   );
 }
 
-export function ShowQuestion({ setCorrectAnswers, setQuestionsAnswered }) {
-  function handleAnswer(answer) {
-    setQuestionsAnswered((q) => q + 1);
-    if (isCorrectAnswer(question, answer)) {
-      setCorrectAnswers((q) => q + 1);
-      navigate("/answer/correct");
-    } else {
-      navigate("/answer/wrong");
-    }
+export function ShowQuestion() {
+  const { loading, error, data, reload } = useLoader(
+    async () => await fetchJSON("/api/question")
+  );
+  const question = data;
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+  if (error) {
+    return <div>Error: {error.toString()} </div>;
   }
 
-  const navigate = useNavigate();
-  const [question] = useState(randomQuestion());
+  async function handleAnswer(answer) {
+    const { id } = question;
+    await postJSON("api/question", { id, answer });
+    await reload();
+  }
+
   return (
     <div className="main">
       <h1>{question.question}</h1>
@@ -82,7 +84,7 @@ function ShowAnswer() {
 
 export function ShowScore() {
   const { loading, error, data } = useLoader(
-    async () => await fetchJSON("api/score")
+    async () => await fetchJSON("/api/score")
   );
   if (loading) {
     return <div>Loading...</div>;

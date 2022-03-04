@@ -59,6 +59,9 @@ export function ShowQuestion() {
             </button>
           </div>
         ))}
+      <Link to={"/score"}>
+        <button className="answerButton">Show your score</button>
+      </Link>
     </div>
   );
 }
@@ -71,7 +74,7 @@ function ShowAnswer() {
         <Route path={"wrong"} element={<h1>Wrong!</h1>} />
       </Routes>
       <div>
-        <Link classname="links" to={"/score"}>
+        <Link className="links" to={"/score"}>
           Show your score
         </Link>
       </div>

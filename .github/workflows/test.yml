@@ -6,6 +6,10 @@ on:
       - main
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+
   test:
     runs-on: ubuntu-latest
     timeout-minutes: 2

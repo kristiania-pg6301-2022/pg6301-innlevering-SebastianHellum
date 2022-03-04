@@ -15,13 +15,13 @@
     "nodemon": "^2.0.15"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-jest": "^27.4.6",
     "body-parser": "^1.19.2",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
-    "@babel/preset-env": "^7.16.11",
-    "@babel/preset-react": "^7.16.7",
-    "babel-jest": "^27.4.6",
     "jest": "^27.4.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -39,5 +39,7 @@
     "collectCoverageFrom": [
       "**/*.{js,jsx}"
     ]
-  }
+  },
+  "main": "server.js",
+  "description": ""
 }
